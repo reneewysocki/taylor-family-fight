@@ -105,4 +105,13 @@ h1 {
     h1 {
         font-size: 2rem;
     }
+
+    #main-game {
+        background-image: url(../images/thunderstorm.png)
+    }
+
+    body {
+        background-color: black;
+    }
 }
+
