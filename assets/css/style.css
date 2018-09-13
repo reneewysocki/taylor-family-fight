@@ -100,3 +100,9 @@ h1 {
     font-family: 'Alegreya Sans SC', sans-serif;
     font-size: 5rem;
 }
+
+@media only screen and (max-width: 750px) {
+    h1 {
+        font-size: 2rem;
+    }
+}

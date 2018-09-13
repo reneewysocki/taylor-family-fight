@@ -138,7 +138,7 @@ $(document).ready(function () {
                 if (numEnemies > 0) {
                     $(".fighting").remove();
                     $("#whathappens").hide();
-                    enemyArray[myChar].hitPoints = enemyArray[myChar].hitPoints + 75;
+                    enemyArray[myChar].hitPoints = enemyArray[myChar].hitPoints + 50;
                     $("#todo").html("You have defeated " + enemyArray[opponentChar].name + "! Choose another opponent." );
                     haveAttacker = false;
                 } else {
