@@ -113,5 +113,10 @@ h1 {
     body {
         background-color: black;
     }
+
+    .character {
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
 }
 
