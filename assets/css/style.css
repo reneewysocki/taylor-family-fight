@@ -1,0 +1,102 @@
+body {
+    background-image: url(../images/thunderstorm.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    font-family: 'Open Sans', sans-serif;
+}
+
+header {
+    background-color: #590E0E;
+    width: 100%;
+    text-align: center;
+    padding: 10px 0px;
+    color: white;
+    font-size: 30px;
+   /* border-bottom: 2px solid rgb(92, 162, 198); */
+}
+
+.winsloses {
+    background-color: rgba(255,255,255,.5);
+    color: white;
+    padding: 5px 0px;
+    text-align: center;
+    font-size: 18px;
+}
+
+#main-game {
+    background-color: rgba(0,0,0,.75);
+    /* padding-top: 20px; */
+    border: 2px #D4402C solid;
+    padding-bottom: 10px;
+    color: white;
+}
+
+.character-image {
+    height: 150px;
+    padding-bottom: 5px;
+}
+
+#character-section {
+    padding-bottom: 10px;
+}
+.character {
+    display: inline-block;
+    text-align: center;
+    align-content: center;
+    padding: 0px 20px;
+  }
+
+  .character-name {
+    text-align: center;
+    line-height: 30px;
+    font-size: 20px;
+    font-family: 'Alegreya Sans SC', sans-serif;
+    letter-spacing: 1px;
+  }
+  .character-health {
+    text-align: center;
+  }
+
+  .section-title {
+      text-align: center;
+      font-weight: bold;
+      font-size: 18px;
+      padding: 10px 0px;
+  }
+
+  .hero {
+    background-color: rgb(0,113,47);
+    color: white;
+    border: 2px solid #072513;
+    margin-bottom: 10px;
+}
+
+.fighting {
+    background-color: rgba(189,33,48,0.75);
+    color: white;
+    border: 2px solid #8e1924;
+    margin-bottom: 10px;
+}
+
+#todo {
+    background-color: #A4211A;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: 2px solid #250907;
+}
+
+#whathappens {
+    background-color: #A4211A;
+    margin-top: 10px;
+    border: 2px solid #250907;
+    padding: 5px;
+}
+
+#fight-function {
+    padding: 5px 0px;
+}
+
+h1 {
+    font-family: 'Alegreya Sans SC', sans-serif;
+    font-size: 5rem;
+}

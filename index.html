@@ -1,0 +1,52 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Alegreya+Sans+SC:900|Open+Sans" rel="stylesheet">
+    <link rel="shortcut icon" type="image/png" href="assets/images/favicon.png" />
+    <title>Taylor Family Fight!</title>
+</head>
+
+<body class="container">
+    <header>
+        <h1>Taylor Family Fight!</h1>
+    </header>
+
+
+    <div class="container" id="main-game">
+        <div class="row">
+            <div class="container winsloses col-sm" id="wins"></div>
+            <div class="container winsloses col-sm" id="loses"></div>
+        </div>
+        <div class="row">
+            <div class="container col-lg-6 section-title" id="todo"></div>
+        </div>
+        <div class="row" id="character-section">
+        </div>
+        <div class="row theCenter text-center" id="fight">
+            <div id="myguy" class="col-md-4"></div>
+            <div class="col-md-4" id="fight-function">
+                <button id="attack" type="button" class="btn btn-danger" value=attack>Fight!</button>
+                <br>
+                <br>
+                <div id="whathappens"></div>
+                <br>
+                <button id="restart" type="button" class="btn btn-info" value=restart>Restart</button>
+                <br>
+            </div>
+            <div id="enemy" class="col-md-4"></div>
+        </div>
+    </div>
+
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+    <script src="assets/javascript/game.js"></script>
+
+</body>
+
+</html>
