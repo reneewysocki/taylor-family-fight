@@ -1,7 +1,7 @@
 //Array of Playable Characters 
 $(document).ready(function () {
 
-    var myChar, opponentChar, choices, enemyArray, haveCharacter, haveAttacker, numEnemies;	//Set Variables
+    var myChar, opponentChar, choices, enemyArray, haveCharacter, haveAttacker, numEnemies, hero, badguy, currentAction, currentReaction;	//Set Variables
     var wins = 0;
     var loses = 0;
 
@@ -15,36 +15,36 @@ $(document).ready(function () {
             name: "Jordan",
             pic: 'assets/images/jordan.png',
             alt: 'jordan',
-            hitPoints: setPoints(100,150),
-            attackPower: setPoints(8,15),
+            hitPoints: setPoints(100, 150),
+            attackPower: setPoints(8, 15),
         }, {
             id: 1,
             name: "Austin",
             pic: 'assets/images/austin.png',
             alt: 'austin',
-            hitPoints: setPoints(100,150),
-            attackPower: setPoints(8,15),
+            hitPoints: setPoints(100, 150),
+            attackPower: setPoints(8, 15),
         }, {
             id: 2,
             name: "Cameron",
             pic: 'assets/images/cameron.png',
             alt: 'cameron',
-            hitPoints: setPoints(100,150),
-            attackPower: setPoints(8,15),
+            hitPoints: setPoints(100, 150),
+            attackPower: setPoints(8, 15),
         }, {
             id: 3,
             name: "Victoria",
             pic: 'assets/images/victoria.png',
             alt: 'victoria',
-            hitPoints: setPoints(100,150),
-            attackPower: setPoints(8,15),
+            hitPoints: setPoints(100, 150),
+            attackPower: setPoints(8, 15),
         }, {
             id: 4,
             name: "Logan",
             pic: 'assets/images/logan.png',
             alt: 'logan',
-            hitPoints: setPoints(100,150),
-            attackPower: setPoints(8,15),
+            hitPoints: setPoints(100, 150),
+            attackPower: setPoints(8, 15),
         }];
 
         haveCharacter = false;
@@ -104,10 +104,10 @@ $(document).ready(function () {
 
     //updates characters with points 
     function renderCharacters() {
-        var hero = "<div id=" + enemyArray[myChar].id + " class='character text-center hero col-sm' value=" + enemyArray[myChar].id +
+        hero = "<div id=" + enemyArray[myChar].id + " class='character text-center hero col-sm' value=" + enemyArray[myChar].id +
             ">" + "<div class='character-name'>" + enemyArray[myChar].name + "</div>" + "<img class='character-image' src=" + enemyArray[myChar].pic + " alt=" + enemyArray[myChar].alt + "><br> Health: " + enemyArray[myChar].hitPoints +
             "<br> Attack: " + enemyArray[myChar].attackPower + " </div>";
-        var badguy = "<div id=" + enemyArray[opponentChar].id + " class='character text-center fighting col-sm' value=" + enemyArray[opponentChar].id +
+        badguy = "<div id=" + enemyArray[opponentChar].id + " class='character text-center fighting col-sm' value=" + enemyArray[opponentChar].id +
             ">" + "<div class='character-name'>" + enemyArray[opponentChar].name + "</div>" + "<img class='character-image' src=" + enemyArray[opponentChar].pic + " alt=" + enemyArray[opponentChar].alt + "><br> Health: " + enemyArray[opponentChar].hitPoints +
             "<br> Attack: " + enemyArray[opponentChar].attackPower + " </div>";
         $('#myguy').html(hero);
@@ -117,10 +117,13 @@ $(document).ready(function () {
     //prints actions to page 
     function whatHappens() {
         $('#whathappens').show();
-        var description = enemyArray[myChar].name + " attacks " + enemyArray[opponentChar].name + " with " + enemyArray[myChar].attackPower + " damage!<br>" +
-            enemyArray[opponentChar].name + " counterattacks with " + enemyArray[opponentChar].attackPower + " damage!";
+        setAction();
+        var description = enemyArray[myChar].name + " " + currentAction + " " + enemyArray[opponentChar].name + " for " + enemyArray[myChar].attackPower + " points!<br>" +
+            enemyArray[opponentChar].name  + " " +  currentReaction  + " " + enemyArray[myChar].name + " back for " + enemyArray[opponentChar].attackPower + " points!";
         $('#whathappens').html(description);
     }
+
+
 
     //attack button operations
     $('#attack').on('click', function () {
@@ -138,9 +141,9 @@ $(document).ready(function () {
                 if (numEnemies > 0) {
                     $(".fighting").remove();
                     //$("#whathappens").hide();
-                    var heal = setPoints(50,125);
+                    var heal = setPoints(50, 125);
                     enemyArray[myChar].hitPoints = enemyArray[myChar].hitPoints + heal;
-                    $("#todo").html("You have defeated " + enemyArray[opponentChar].name + "! Choose another opponent." );
+                    $("#todo").html("You have defeated " + enemyArray[opponentChar].name + "! Choose another opponent.");
                     $("#whathappens").html("Gained +" + heal + " Health Points");
                     haveAttacker = false;
                 } else {
@@ -173,8 +176,21 @@ $(document).ready(function () {
 
     //random  number generator 
     function setPoints(min, max) {
-        return Math.floor(Math.random() * (max - min + 1) ) + min;
+        return Math.floor(Math.random() * (max - min + 1)) + min;
     }
+
+    function setAction() {
+
+        var actions = ["poisons", "kicks", "punches", "headbutts", "verbally abuses", "karate kicks", "tases", "maces", "stabs", "throws acid on", "kidnaps", "ties up", "spanks", "whips", "knocks-out", "shoots", "decimates", "sabotages", "scares", "bludgeons", "slashes", "pummels", "round-house kicks", "insults", "body slams"];
+        var reactions = ["poisons", "kicks", "punches", "headbutts", "verbally abuses", "karate kicks", "tases", "maces", "stabs", "throws acid on", "kidnaps", "ties up", "spanks", "whips", "knocks-out", "shoots", "decimates", "sabotages", "scares", "bludgeons", "slashes", "pummels", "round-house kicks", "insults", "body slams"];
+
+        currentAction = actions[Math.floor(Math.random()*actions.length)];
+
+        currentReaction = reactions[Math.floor(Math.random()*reactions.length)];
+
+        }
+    
+
 
 
 
