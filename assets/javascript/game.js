@@ -181,8 +181,8 @@ $(document).ready(function () {
 
     function setAction() {
 
-        var actions = ["poisons", "kicks", "punches", "headbutts", "verbally abuses", "karate kicks", "tases", "maces", "stabs", "throws acid on", "kidnaps", "ties up", "spanks", "whips", "knocks-out", "shoots", "decimates", "sabotages", "scares", "bludgeons", "slashes", "pummels", "round-house kicks", "insults", "body slams"];
-        var reactions = ["poisons", "kicks", "punches", "headbutts", "verbally abuses", "karate kicks", "tases", "maces", "stabs", "throws acid on", "kidnaps", "ties up", "spanks", "whips", "knocks-out", "shoots", "decimates", "sabotages", "scares", "bludgeons", "slashes", "pummels", "round-house kicks", "insults", "body slams"];
+        var actions = ["poisons", "kicks", "punches", "headbutts", "verbally abuses", "karate kicks", "tazes", "maces", "stabs", "throws acid on", "kidnaps", "ties up", "spanks", "whips", "knocks-out", "decimates", "sabotages", "scares", "bludgeons", "slashes", "pummels", "round-house kicks", "insults", "body slams"];
+        var reactions = ["poisons", "kicks", "punches", "headbutts", "verbally abuses", "karate kicks", "tazes", "maces", "stabs", "throws acid on", "kidnaps", "ties up", "spanks", "whips", "knocks-out", "decimates", "sabotages", "scares", "bludgeons", "slashes", "pummels", "round-house kicks", "insults", "body slams"];
 
         currentAction = actions[Math.floor(Math.random()*actions.length)];
 
