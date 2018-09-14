@@ -55,8 +55,8 @@ $(document).ready(function () {
         //creates character divs and writes them to page 
         for (var i = 0; i < enemyArray.length; i++) {
             choices += "<div id=" + enemyArray[i].id + " class='character col-sm' value=" + enemyArray[i].id +
-                ">" + "<div class='character-name'>" + enemyArray[i].name + "</div>" + "<img class='character-image' src=" + enemyArray[i].pic + " alt=" + enemyArray[i].alt + "><br> HP: " + enemyArray[i].hitPoints +
-                "<br> AP: " + enemyArray[i].attackPower + " </div>";
+                ">" + "<div class='character-name'>" + enemyArray[i].name + "</div>" + "<img class='character-image' src=" + enemyArray[i].pic + " alt=" + enemyArray[i].alt + "><br> Health: " + enemyArray[i].hitPoints +
+                "<br> Attack: " + enemyArray[i].attackPower + " </div>";
         }
 
         $("#character-section").html(choices);
@@ -105,11 +105,11 @@ $(document).ready(function () {
     //updates characters with points 
     function renderCharacters() {
         var hero = "<div id=" + enemyArray[myChar].id + " class='character text-center hero col-sm' value=" + enemyArray[myChar].id +
-            ">" + "<div class='character-name'>" + enemyArray[myChar].name + "</div>" + "<img class='character-image' src=" + enemyArray[myChar].pic + " alt=" + enemyArray[myChar].alt + "><br> HP: " + enemyArray[myChar].hitPoints +
-            "<br> AP: " + enemyArray[myChar].attackPower + " </div>";
+            ">" + "<div class='character-name'>" + enemyArray[myChar].name + "</div>" + "<img class='character-image' src=" + enemyArray[myChar].pic + " alt=" + enemyArray[myChar].alt + "><br> Health: " + enemyArray[myChar].hitPoints +
+            "<br> Attack: " + enemyArray[myChar].attackPower + " </div>";
         var badguy = "<div id=" + enemyArray[opponentChar].id + " class='character text-center fighting col-sm' value=" + enemyArray[opponentChar].id +
-            ">" + "<div class='character-name'>" + enemyArray[opponentChar].name + "</div>" + "<img class='character-image' src=" + enemyArray[opponentChar].pic + " alt=" + enemyArray[opponentChar].alt + "><br> HP: " + enemyArray[opponentChar].hitPoints +
-            "<br> AP: " + enemyArray[opponentChar].attackPower + " </div>";
+            ">" + "<div class='character-name'>" + enemyArray[opponentChar].name + "</div>" + "<img class='character-image' src=" + enemyArray[opponentChar].pic + " alt=" + enemyArray[opponentChar].alt + "><br> Health: " + enemyArray[opponentChar].hitPoints +
+            "<br> Attack: " + enemyArray[opponentChar].attackPower + " </div>";
         $('#myguy').html(hero);
         $('#enemy').html(badguy);
     }
@@ -137,9 +137,11 @@ $(document).ready(function () {
                 numEnemies--;
                 if (numEnemies > 0) {
                     $(".fighting").remove();
-                    $("#whathappens").hide();
-                    enemyArray[myChar].hitPoints = enemyArray[myChar].hitPoints + 50;
+                    //$("#whathappens").hide();
+                    var heal = setPoints(50,125);
+                    enemyArray[myChar].hitPoints = enemyArray[myChar].hitPoints + heal;
                     $("#todo").html("You have defeated " + enemyArray[opponentChar].name + "! Choose another opponent." );
+                    $("#whathappens").html("Gained +" + heal + " Health Points");
                     haveAttacker = false;
                 } else {
                     whatHappens();

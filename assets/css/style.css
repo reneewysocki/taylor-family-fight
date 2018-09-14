@@ -7,6 +7,7 @@ body {
 
 header {
     background-color: #590E0E;
+    background-image: linear-gradient(to bottom, #590E0E, #d4402c);
     width: 100%;
     text-align: center;
     padding: 10px 0px;
@@ -94,6 +95,10 @@ header {
 
 #fight-function {
     padding: 5px 0px;
+}
+
+#fight {
+    padding-top: 15px;
 }
 
 h1 {
