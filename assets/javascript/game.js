@@ -141,7 +141,7 @@ $(document).ready(function () {
                 if (numEnemies > 0) {
                     $(".fighting").remove();
                     //$("#whathappens").hide();
-                    var heal = setPoints(50, 125);
+                    var heal = setPoints(60, 145);
                     enemyArray[myChar].hitPoints = enemyArray[myChar].hitPoints + heal;
                     $("#todo").html("You have defeated " + enemyArray[opponentChar].name + "! Choose another opponent.");
                     $("#whathappens").html("Gained +" + heal + " Health Points");
