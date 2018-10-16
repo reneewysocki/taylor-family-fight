@@ -14,3 +14,5 @@ Select the character you'd like to play, then select your first opponent. Keep c
 Health points will be randomly added after you have defeated an opponent. 
 
 If you can successfully defeat all four opponents, you are the champion! 
+
+<a href="https://reneewysocki.github.io/taylor-family-fight/"> Click Here to Play </a>
